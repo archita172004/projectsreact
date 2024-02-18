@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>30 Days Of React Challenge</title>
+
+   <style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html,
+    body{
+        height: 100%;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-weight: 300;
+        color: black;
+    }
+
+    .root{
+        min-height: 100%;
+        position: relative;
+    }
+     .header-wrapper,
+     .main-wrapper{
+        padding:10px;
+        margin: 2px auto;
+     }
+     h1{
+        font-size: 70px;
+        font-weight: 300;
+     }
+     h2,
+     h3{
+        font-weight: 300;
+     }
+
+     header{
+        background-color: aquamarine;
+        padding: 10px;
+     }
+
+     main{
+        padding:10px;
+        padding-bottom: 60px;
+     }
+
+     ul{
+        margin-left: 15px;
+     }
+
+     ul li {
+        list-style: none;
+     }
+
+     footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: #6cf;
+     }
+
+     .footer-wrapper{
+        font-weight: 400;
+        text-align: center;
+        line-height: 60px;
+     }
+    </style>
+</head>
+
+  <body>
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // To get the root element from the HTML document
+      const rootElement = document.querySelector('.root')
+
+    
+   const welcome = 'Welcome to 30 days of react'
+   const title='getting started react'
+   const subtitle ='javascript library'
+   const authorFirstName='Archita'
+   const authorLastName='Chaudhary'
+   const date ='Jan 16, 2024'
+
+// JSX element
+      const header = (
+      <header>
+        <div className='header-wrapper'>
+        <h1>{welcome}</h1>
+            <h2>{title}</h2>
+                <h3>{subtitle}</h3>
+                <p>
+                    Instructor: {authorFirstName} {authorLastName}</p>
+                <small>Date: {date}</small>
+                </div>
+        </header>
+      )
+    
+      const yearBorn = 2004
+      const currentYear = new Date().getFullYear()
+      const age = currentYear - yearBorn
+      const personAge =(
+        <p>
+            {' '}
+            {authorFirstName} {authorLastName} is {age} years old
+            </p>
+      )
+
+
+
+
+    const techs = ['HTML','CSS','JavaScript']
+    const techsFormatted = techs.map((tech)=> <li key={tech}>{tech}</li>)
+
+    const main = (
+        <main>
+            <div className='main-wrapper'>
+            <p>Prerequisite tp get statrted {' '}<strong>
+                <em> react.js</em>
+                </strong>
+                </p>
+
+            <ul>
+                {techsFormatted}
+                </ul>
+                {personAge}
+                </div>
+            </main>
+      )
+     
+      const copyRight = 'Copyright 2024'
+      
+      const footer =(
+        <footer >
+            <div className='footer-wrapper'>
+           <p>{copyRight}</p> 
+           </div>
+            </footer>
+      )
+
+    // const title =<h1 className='title'>Getting started react
+    //     </h1>
+    //     const inputField=(
+    //         <div>
+    //             <label htmlFor='Firstname'>First Name</label>
+    //             <input type='text' id='Firstname' placeholder='First Name'></input>
+    //             </div>
+    //     )
+
+
+
+
+      //jsx element which contains all it is a container or parent
+
+      const app = (
+        <div>
+        {header} 
+        {main} {
+        footer
+        }
+        </div>
+      )
+     
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // we render the JSX element using the ReactDOM package
+      // ReactDOM has the render method and the render method takes two arguments
+      ReactDOM.render(app, rootElement)
+    </script>
+
+
+  </body>
+</html>
